@@ -1,0 +1,73 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<link rel="stylesheet" href="/public/css/alert-success.css">
+<link rel="stylesheet" href="/public/css/alert-error.css">
+
+<% if(typeof errors!= 'undefined') { %>
+    <%    errors.forEach(function(error){ %>
+      <div class="alert hide">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg"><%= error.msg %></span>
+      </div>
+      <script>
+            $(".alert").addClass("show");
+            $(".alert").removeClass("hide");
+            $(".alert").addClass("showAlert");
+            setTimeout(function () {
+                  $(".alert").removeClass("show");
+                  $(".alert").addClass("hide");
+            }, 5000);
+      </script>
+
+    <%    })        %>
+    <% } %>
+    
+    <% if(success_msg!= '') { %>
+      <div class="alert-success hide">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg"><%=success_msg %></span>
+      </div>
+      <script>
+            $(".alert-success").addClass("show");
+            $(".alert-success").removeClass("hide");
+            $(".alert-success").addClass("showAlert");
+            setTimeout(function () {
+                  $(".alert-success").removeClass("show");
+                  $(".alert-success").addClass("hide");
+            }, 5000);
+      </script>
+
+          <% } %>
+    
+    <% if(error_msg != '') { %>
+      <div class="alert hide">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg"><%=  error_msg %></span>
+      </div>
+      <script>
+            $(".alert").addClass("show");
+            $(".alert").removeClass("hide");
+            $(".alert").addClass("showAlert");
+            setTimeout(function () {
+                  $(".alert").removeClass("show");
+                  $(".alert").addClass("hide");
+            }, 5000);
+      </script>
+
+          <% } %> 
+    <% if(error != '') { %>
+      <div class="alert hide">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg"><%= error %></span>
+      </div>
+      <script>
+            $(".alert").addClass("show");
+            $(".alert").removeClass("hide");
+            $(".alert").addClass("showAlert");
+            setTimeout(function () {
+                  $(".alert").removeClass("show");
+                  $(".alert").addClass("hide");
+            }, 5000);
+      </script>
+
+      <% } %> 
